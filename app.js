@@ -12,7 +12,7 @@ var app = express();
 var load = require('express-load');
 var error = require('./middleware/error');
 
-var server = require('http').createServer(3000);
+var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
 // all environments
