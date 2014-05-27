@@ -2,7 +2,7 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://192.168.0.107:3000');
+  var socket = io.connect('http://localhost:3000');
   socket.on('send-client', function (msg) {
     document.getElementById('chat').innerHTML += msg;
   });
@@ -10,6 +10,7 @@
     var nome = document.getElementById('nome').value;
     var msg = document.getElementById('msg').value;
     socket.emit('send-server', {nome: nome, msg: msg});
+    document.getElementById('msg').value = '';
 	};
 </script>
 
